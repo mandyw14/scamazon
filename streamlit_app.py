@@ -78,7 +78,7 @@ if i < len(deck):
 else:
     percent = round((st.session_state.score/len(deck))*100)
     st.success(f"Finished! Score: {st.session_state.score}/{len(deck)} ({percent}%).")
-    st.caption("Tips: Match URLs with known sources, never share passwords, be wary of 'free prizes'.")
+    st.caption("Tips: Match URLs with known sources, never share passwords, be wary of 'free prizes'. For more information go to https://www.protectchildren.ca/en/")
     if st.button("Play again"):
         for k in ["deck","idx","score","locked","feedback"]:
             st.session_state.pop(k, None)
