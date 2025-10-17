@@ -12,6 +12,12 @@ SCENARIOS = [
      "why": "Legit support never asks for passwords."},
     {"text": "School newsletter: donate via official website or bring cash to the office.", "is_scam": False,
      "why": "Trusted channel and official site options."},
+     {"text": "An adult asks you for help.", "is_scam": True,
+     "why": "Adults should not need help from a kid. They should get help from other adults. Tell them you can't help and then you should go get help yourself"},
+     {"text": "An adult asks you to come play with their puppy", "is_scam": True,
+     "why": "It could be a lure. Adults you don't know should NOT ask you go anywhere with you."},
+    {"text": "INSERT SCENARIO HERE", "is_scam": False/True,
+     "why": "INSERT REASON HERE"},
 ]
 
 if "deck" not in st.session_state:
@@ -22,7 +28,7 @@ if "deck" not in st.session_state:
     st.session_state.feedback = ""
 
 st.title("🛡️ Scamazon: Is it a Scam or Not?")
-st.caption("Read each scenario. Decide if it’s a *scam* or *not a scam*.")
+st.caption("Read each scenario. Decide if it’s likely a *scam* or *not a scam*.")
 
 i = st.session_state.idx
 deck = st.session_state.deck
