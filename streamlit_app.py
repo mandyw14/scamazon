@@ -6,14 +6,14 @@ st.set_page_config(page_title="Scamazon: Is it a Scam or Not?", page_icon="ðŸ›¡ï
 SCENARIOS = [
     {"text": "You get an email from the principal linking to the exact school domain on the poster.", "is_scam": False,
      "why": "Known sender + matching domain + no extra info requests."},
-    {"text": "Pop-up: 'You won a phone! Pay shipping with a card to claim.'", "is_scam": True,
+    {"text": "A Pop-up appears on your screen: 'You won a phone! Pay shipping with a card to claim.'", "is_scam": True,
      "why": "Prizes that ask for payment info are scams."},
-    {"text": "You get a DM (a direct message to you) that says:'Support here. Share your password to avoid a ban.'", "is_scam": True,
+    {"text": "You get a DM (a direct message) that says:'Support here. Share your password to avoid a ban.'", "is_scam": True,
      "why": "Legit support never asks for passwords."},
-    {"text": "School newsletter: donate via official website or bring cash to the office.", "is_scam": False,
+    {"text": "A School newsletter says: Donate via official website or bring cash to the office.", "is_scam": False,
      "why": "Trusted channel and official site options."},
-     {"text": "An adult asks you for help.", "is_scam": True,
-     "why": "Adults should not need help from a kid. They should get help from other adults. Tell them you can't help and then you should go get help yourself"},
+     {"text": "You're walking home and an adult stops you and asks for your help.", "is_scam": True,
+     "why": "Adults should not need help from a kid. They should get help from other adults. You can say I'm sorry, I can't help. Then walk away and go tell someone."},
      {"text": "An adult you don't know asks you to come see their puppy", "is_scam": True,
      "why": "It could be a lure. Adults you don't know should never ask you go anywhere with them. Do not go."},
      {"text": "You're home alone and someone comes to the door saying there is an emergency. They want you to open the door.", "is_scam": True,
@@ -26,9 +26,14 @@ SCENARIOS = [
      "why": "This is called sextortion. It won't end when you send money so don't do it. You need to get help from your adult."},
      {"text": "Your bank card starting with (45064**) has been locked, visit https://cibcsecurelogin.com to resolve. Note: Any attempt to unlock access after 11:59PM will necessit a visit at your nearest CIBC branch.", "is_scam": True,
      "why": "Messages that invoke a sense of urgency, i.e., that you have to act fast, are typically scams. Also, the first 4 digits of cards are somewhat standard and generic."},
-    {"text": "A text that says: Thank you for your recent purchase... and then references a purchase you just made", "is_scam": False,
+    {"text": "You get a text that says: Thank you for your recent purchase... and then references a purchase you just made", "is_scam": False,
      "why": "The message included personal, not generic information and also didn't ask you to click on anything."},
+    {"text": "You see a poster that says: 'Free Kittens.' And you see a QR code.", "is_scam": True,
+     "why": "It may or may not be a scam. If you want a kitten, talk to your adult and then do some investigating into whether the poster is legit or a scam."},
+
 ]
+# {"text": "INSERT", "is_scam": False/True,
+#     "why": "INSERT THE RATIONALE HERE"},
 
 if "deck" not in st.session_state:
     st.session_state.deck = random.sample(SCENARIOS, k=len(SCENARIOS))
